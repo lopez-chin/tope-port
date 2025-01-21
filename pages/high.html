@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elementary School</title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #e8e4e6, #55b6e0, #2338f9);
+            font-family: 'merriweather', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            padding: 1em;
+            text-align: left;
+        }
+        header .back-button {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            font-size: 1em;
+            background-color: #2a27ee;
+            padding: 0.5em 1em;
+            border-radius: 0.5em;
+            transition: background-color 0.5s;
+        }
+        
+        header .back-button:hover {
+            background-color: #8ba8f0;
+        }
+        main {
+            padding: 2em;
+            text-align: center;
+        }
+        main p{
+            font-size: 18px;
+        }
+        main h1{
+            color: #1613a9;
+        }
+
+        .columns {
+            display: flex;
+            justify-content: center;
+            gap: 3.5em;
+            margin-top: 3em;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .column {
+            flex: 1;
+            max-width: 300px;
+            perspective: 1000px; /* Required for 3D effect */
+        }
+
+        .column .card {
+            width: 100%;
+            height: 300px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .column:hover .card {
+            transform: rotateY(180deg); /* Flip on hover */
+        }
+
+        .card .front,
+        .card .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden; /* Hide back when flipped */
+            border-radius: 10px;
+        }
+
+        .card .front {
+            background: linear-gradient(135deg, #e8e4e6, #55b6e0, #2338f9);
+            padding: 1.5em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .card .back {
+            background-color: #4aa8e6;
+            color: rgb(7, 6, 6);
+            transform: rotateY(180deg);
+            padding: 1em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .column img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.5s ease;
+        }
+
+        .column img:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+@media (max-width: 768px) {
+    .columns {
+        flex-direction: column; /* Stack columns vertically */
+        align-items: center;
+    }
+
+    .column {
+        width: 100%; /* Full-width columns */
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    header .back-button {
+        font-size: 0.9em;
+        padding: 0.4em 0.8em;
+    }
+
+    main p {
+        font-size: 16px;
+    }
+
+    .card {
+        height: auto; /* Let height adjust dynamically */
+    }
+
+    .card .front,
+    .card .back {
+        padding: 1em;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html#education" class="back-button">
+            <span class="back-arrow"></span> Back 
+        </a>
+    </header>
+    <main>
+        <h1>DON ANDRES SORIANO NATIONAL HIGH-SCHOOL</h1>
+        <p>Welcome to the detailed page of my high school education. I studied at DON ANDRES SORIANO National High School.</p>
+
+        <!-- Three-Column Section with Card Flip -->
+        <div class="columns">
+            <div class="column">
+                <div class="card">
+                    <div class="front">
+                        <img src="h2.jpg" alt="Teacher">
+                        <h3>DEDICATED TEACHERS</h3>
+                        <p>Our teachers were committed to providing quality education and nurturing our potential every step of the way.</p>
+                    </div>
+                    <div class="back">
+                        <h3>Teachers' Impact</h3>
+                        <p>They encouraged creativity and fostered a love for learning that still influences me today.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <div class="front">
+                        <img src="h1.jpg" alt="Classmates">
+                        <h3>MEMORABLE CLASSMATES</h3>
+                        <p>The friendships I built in elementary school remain some of the most cherished relationships in my life.</p>
+                    </div>
+                    <div class="back">
+                        <h3>Friendships</h3>
+                        <p>These classmates have supported me throughout life, and we still stay in touch to this day.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <div class="front">
+                        <img src="h3.jpg" alt="School Events">
+                        <h3>GRADUATION</h3>
+                        <p>From academic contests to fun-filled sports days, helped shape my holistic development.</p>
+                    </div>
+                    <div class="back">
+                        <h3>GRADUATION</h3>
+                        <p>The school events brought our community together and created lasting memories.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <main>
+        <!-- Three-Column Section with Card Flip -->
+        <div class="columns">
+            <div class="column">
+                <div class="card">
+                    <div class="front">
+                        <img src="h6.jpg" alt="Teacher">
+                        <h3>DEDICATED TEACHERS</h3>
+                        
+                    </div>
+                    <div class="back">
+                        <h3>Teachers' Impact</h3>
+                        <p>They encouraged creativity and fostered a love for learning that still influences me today.</p>
+                        <p>Our teachers were committed to providing quality education and nurturing our potential every step of the way.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <div class="front">
+                        <img src="h4.jpg" alt="Classmates">
+                        <h3>MEMORABLE CLASSMATES</h3>
+                        
+                    </div>
+                    <div class="back">
+                        <h3>Friendships</h3>
+                        <p>These classmates have supported me throughout life, and we still stay in touch to this day.</p>
+                        <p>The friendships I built in elementary school remain some of the most cherished relationships in my life.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <div class="front">
+                        <img src="h5.jpg" alt="School Events">
+                        <h3>Grade 11</h3>
+                        
+                    </div>
+                    <div class="back">
+                        <h3>Grade 11</h3>
+                        <p>The school events brought our community together and created lasting memories.</p>
+                        <p>From academic contests to fun-filled sports days, every event helped shape my holistic development.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <div class="front">
+                        <img src="h7.jpg" alt="School Events">
+                        <h3>Grade 12</h3>
+                        
+                    </div>
+                    <div class="back">
+                        <h3>Grade 12</h3>
+                        <p>The school events brought our community together and created lasting memories.</p>
+                        <p>From academic contests to fun-filled sports days, every event helped shape my holistic development.</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
